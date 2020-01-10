@@ -1,0 +1,11 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:pwd@localhost:8761/eureka/
+
+server:
+  port: 28080
+
+spring:
+  application:
+    name: gateway-server
