@@ -25,3 +25,4 @@ eureka:
       defaultZone: http://admin:pwd@${eureka.instance.hostname}:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
+    enable-self-preservation: false
