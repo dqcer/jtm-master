@@ -11,6 +11,6 @@ spring:
     name: platform-user
   datasource:
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
-    url: jdbc:p6spy:mysql://192.168.31.171:3306/jtm?autoReconnect=true&characterEncoding=UTF-8&serverTimezone=Hongkong
-    data-password: 123456
-    data-username: root
+    url: jdbc:p6spy:mysql://192.168.31.171:3306/jtm
+    password: 123456
+    username: root
