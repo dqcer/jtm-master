@@ -8,7 +8,7 @@ server:
 
 spring:
   application:
-    name: platform-user
+    name: platform-auth
   datasource:
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
     #url: jdbc:p6spy:mysql://192.168.31.171:3306/jtm
@@ -16,3 +16,14 @@ spring:
     username: root
     url: jdbc:p6spy:mysql://39.106.139.232:3306/jtm
     password: root
+  redis:
+    host: 39.106.139.232
+    port: 6379
+    password:
+    database: 15
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0

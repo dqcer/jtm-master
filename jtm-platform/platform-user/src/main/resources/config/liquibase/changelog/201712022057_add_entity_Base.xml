@@ -7,15 +7,15 @@
 
     <property name="now" value="now()" dbms="mysql"/>
 
-    <changeSet id="20171202205" author="WATER">
+    <changeSet id="202001151153" author="WATER">
 
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="tb_member"/>
+                <tableExists tableName="sys_user"/>
             </not>
         </preConditions>
 
-        <createTable tableName="tb_member">
+        <createTable tableName="sys_user">
 
             <column name="id" type="bigint" autoIncrement="true"   remarks="主键"   >
                 <constraints primaryKey="true" nullable="false"/>
@@ -35,9 +35,9 @@
             <column name="created_by" type="varchar(50)" remarks="创建人" >
                 <constraints nullable="false"/>
             </column>
-            <column name="created_date" type="timestamp" defaultValueDate="${now}"  remarks="创建时间" >
+          <!--  <column name="created_date" type="timestamp" defaultValueDate="${now}"  remarks="创建时间" >
                 <constraints nullable="false"/>
-            </column>
+            </column>-->
             <column name="last_modified_by" type="varchar(50)"/>
             <column name="last_modified_date" type="timestamp"/>
         </createTable>

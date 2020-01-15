@@ -19,7 +19,7 @@ public class Result<T> implements Serializable {
 
     private static final long serialVersionUID = 5937332150983213894L;
 
-    private T result;
+    private T data;
 
     private String message;
 
@@ -34,7 +34,7 @@ public class Result<T> implements Serializable {
     }
 
     protected Result(T result, String message, int code){
-        setResult(result);
+        setData(result);
         setMessage(message);
         setCode(code);
     }
