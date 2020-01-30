@@ -1,4 +1,4 @@
-package com.dqcer.jtmcommon.utils;
+package com.dqcer.jtmcommon.utils.algorithm;
 
 /**
  *  算法util
