@@ -1,8 +1,5 @@
 package com.dqcer.jtmcommon.utils.datastructure;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-
 /**
  * 队列
  *
