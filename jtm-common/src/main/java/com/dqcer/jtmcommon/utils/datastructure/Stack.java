@@ -72,4 +72,12 @@ public class Stack<E> {
         }
         return (E) data[top];
     }
+
+    public static void main(String[] args) {
+        Stack<String> stringStack = new Stack<>();
+        stringStack.push("1");
+        stringStack.push("2");
+        System.out.println(stringStack.pop());
+        System.out.println(stringStack.pop());
+    }
 }
