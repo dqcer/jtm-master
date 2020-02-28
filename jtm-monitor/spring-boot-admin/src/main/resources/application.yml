@@ -1,9 +1,9 @@
 server:
-  port: 8761
+  port: 38080
 
 spring:
   application:
-    name: jtm-eureka
+    name: monitor-spring-boot-admin
   security:
     user:
       name: admin
@@ -11,7 +11,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:38080
+        api-path: http://localhost:38080
 
 logging:
   level:
@@ -22,20 +22,21 @@ logging:
 eureka:
   instance:
     hostname: localhost
+    health-check-url: /actuator/health
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://admin:pwd@${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://admin:pwd@localhost:8761/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
     enable-self-preservation: false
 
 management:
-  endpoint:
-    health:
-      show-details: always
   endpoints:
     jmx:
       exposure:
         include: '*'
+  endpoint:
+    health:
+      show-details: always

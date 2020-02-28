@@ -8,46 +8,84 @@ package com.dqcer.jtmcommon.utils.datastructure;
  * @date 22:14 2020/1/30
  */
 public class Queue<E> {
-
+    /**
+     * 存储数组
+     */
     private Object[] nodes = null;
-    private int initialSize;
-    private int start;
-    private int end;
+
+    /**
+     * 队列容量
+     */
+    private int size;
+
+    /**
+     * 队列头
+     */
+    private int front;
+
+    /**
+     * 队列尾
+     */
+    private int rear;
 
     public Queue() {
-        this(8);
+        this(10);
     }
 
     public Queue(int initialSize) {
-        this.initialSize = initialSize;
+        this.size = initialSize;
         nodes = new Object[initialSize];
     }
 
-    public boolean push(E e) {
-        if (end == initialSize) {
+    public boolean add(E e) {
+        if (rear == size) {
             throw new RuntimeException("队列已满，无法插入新的元素");
         }
-        nodes[end ++] = e;
+        nodes[rear ++] = e;
         return true;
     }
 
+    /**
+     * 出队，并移除元素
+     *
+     * @return
+     */
+    public E poll() {
+        E node = (E) nodes[front];
+        if (node == null) {
+            throw new RuntimeException("空队列异常");
+        }
+        nodes[front ++] = null;
+        return node;
+    }
+
     public E peek() {
-        E node = (E) nodes[start];
-        nodes[start ++] = null;
+        E node = (E) nodes[front];
+        if (node == null) {
+            throw new RuntimeException("空队列异常");
+        }
         return node;
     }
 
     public static void main(String[] args) {
         Queue<String> stringQueue = new Queue<>();
-        stringQueue.push("1");
-        stringQueue.push("2");
-        stringQueue.push("3");
-        stringQueue.push("4");
-        stringQueue.push("5");
-        stringQueue.push("6");
-        stringQueue.push("7");
-        stringQueue.push("8");
-        stringQueue.push("9");
+        stringQueue.add("1");
+        System.out.println(stringQueue.peek());
+        stringQueue.add("2");
+        stringQueue.add("3");
+        stringQueue.add("4");
+        stringQueue.add("5");
+        stringQueue.add("6");
+        stringQueue.add("7");
+        stringQueue.add("8");
+        stringQueue.add("9");
+        System.out.println(stringQueue.peek());
+        System.out.println(stringQueue.peek());
+        System.out.println(stringQueue.peek());
+        System.out.println(stringQueue.peek());
+        System.out.println(stringQueue.peek());
+        System.out.println(stringQueue.peek());
+        System.out.println(stringQueue.peek());
         System.out.println(stringQueue.peek());
         System.out.println(stringQueue.peek());
     }

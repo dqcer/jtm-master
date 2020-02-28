@@ -9,3 +9,15 @@ server:
 spring:
   application:
     name: gateway-server
+  boot:
+    admin:
+      client:
+        url: http://localhost:38080
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
